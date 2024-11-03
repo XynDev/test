@@ -23,9 +23,15 @@ def redirect():
 @app.route('/display', methods=['POST', 'GET'])
 def display():
     with sqlite3.connect('database.db') as con:
+        con.row_factory = sqlite3.Row  # This allows us to access columns by name
         cur = con.cursor()
-        cur.execute("SELECT * FROM login")
+        cur.execute("SELECT username, password FROM login")
         records = cur.fetchall()
+        
+
+        for record in records:
+            print(f"Username: {record['username']}, Password: {record['password']}")
+        
     return render_template('display.html', records=records)
 
 @app.route('/addrec', methods=['POST', 'GET'])

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/display.css')}}">
+    </head>
+    <body>
+        <h1>All users</h1>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Password</th>
+            </tr>
+            {% for row in records %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
