@@ -1,0 +1,30 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: cyan;
+}
+
+h1 {
+    text-align: center;
+}
+form {
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+input[type=submit] {
+   margin: auto;
+    display: block;
+}
+
+
+a {
+    text-align: center;
+    margin: auto;
+    display: block;
+}
